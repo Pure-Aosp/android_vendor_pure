@@ -1,0 +1,22 @@
+/cache/dalvik-cache(/.*)? u:object_r:dalvikcache_data_file:s0
+
+/cache/recovery(/.*)?     u:object_r:recovery_cache_file:s0
+
+# Auditd is a logging daemon. Put it into logd's context
+/system/bin/auditd        u:object_r:logd_exec:s0
+/data/misc/audit(/.*)?    u:object_r:auditd_log:s0
+
+/system/bin/sysinit       u:object_r:sysinit_exec:s0
+
+# For minivold in recovery
+/sbin/minivold            u:object_r:vold_exec:s0
+
+/data/hostapd(/.*)?         u:object_r:wifi_data_file:s0
+/data/misc/radio(/.*)?      u:object_r:radio_data_file:s0
+
+#############
+# Superuser's control sockets
+/dev/socket/su-daemon(/.*)?   u:object_r:superuser_device:s0
+
+# Persistent properties
+/persist/properties         u:object_r:persist_property_file:s0
